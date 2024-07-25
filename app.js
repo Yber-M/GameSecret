@@ -8,7 +8,6 @@ condicionesInciales();
 
 function generarNumSecret() {
     let numGenerado = Math.floor(Math.random() * numMaximo) + 1;
-    // console.log(listNumSorte);
 
     if (listNumSorte.includes(numGenerado)) {
         if (listNumSorte.length == numMaximo) {
@@ -36,7 +35,6 @@ function vaciarEntrada() {
 
 function verificarIntento() {
     let numInput = parseInt(document.getElementById('varlorUsuario').value);
-    // console.log('Numero de intentos = ' + numIntentos);
     if (numInput === numSecret) {
         asignarTexto('p', `MUY BIEN. Adivinaste el número en ${numIntentos} ${(numIntentos === 1) ? 'vez' : 'veces'}`)
         document.getElementById('reiniciar').removeAttribute('disabled');
@@ -73,5 +71,4 @@ function condicionesInciales() {
     document.getElementById('btnIntentar').removeAttribute('disabled');
     numSecret = generarNumSecret();
     numIntentos = 1;
-    console.log(numSecret);
 }
